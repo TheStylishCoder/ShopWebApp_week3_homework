@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+  <title>{{ title }} - Current Orders</title>
+</head>
+
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li class="navLink"><a href="/orders">Home</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <h1>Current Orders</h1>
+  
+    
+    <div class="order-container">
+      {% for order in orders %}
+      <div class="order">
+        <h2>{{ order.customer_name }}</h2>
+        <p>{{ order.order_date  }}
+        <br>
+        {{ order.style  }}
+        <br>
+        {{ order.size  }}
+        <br>
+        {{ order.quantity  }}
+        <br>
+        <p>{{ order.order_status  }}</p>
+        <a href="/orders/{{orders.index(order)}}">Show Order</a>
+      </div>
+      {% endfor %}
+    </div>
+  </main>
+  <footer>
+      <ul>
+        <li>Contact Us </li>
+        <li>FAQs</li>
+        <li>Reviews</li>
+      </ul>
+   
+  </footer>
+</body>
+
+</html>

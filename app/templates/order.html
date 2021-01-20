@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <title>{{ title }} - My Order</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li class="navLink"><a href="/orders">Home</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1>{{order.customer_name}}'s Order</h1>
+
+        <div class="order-container">
+        
+            <div class="order">
+                <h2>{{ order.customer_name }}</h2>
+                <p>Type of Flowers: {{ order.style  }}
+                <br>
+                Size: {{ order.size  }}
+                <br>
+                Quantity: {{ order.quantity  }}
+                <br>
+                Date Ordered: {{ order.order_date  }}</p>
+                <h4>Status: {{ order.order_status  }}</h4>
+            </div>
+        </div>
+        <br>
+        <br>
+        <div class="message">
+            <p>Thank you for your order!</p>
+        </div>
+    </main>
+    <footer>
+        <ul>
+            <li>Contact Us </li>
+            <li>FAQs</li>
+            <li>Reviews</li>
+          </ul>
+
+    </footer>
+    
+</body>
+</html>
